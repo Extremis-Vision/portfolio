@@ -129,7 +129,6 @@ export default function App() {
           position: 'absolute',
           top: '30%',
           left: '50%',
-          transform: 'translateX(-50%)',
           fontSize: '4rem',
           zIndex: 10
         }}>
