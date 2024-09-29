@@ -1,34 +1,27 @@
-name: Docker Image CI
-
-on:
-  push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
-
 jobs:
-  build:
-
+  push_to_registry:
+    name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
-
     steps:
-    # Check out the repository
-    - uses: actions/checkout@v4
-
-    # Log in to DockerHub (replace USERNAME and PASSWORD with your DockerHub credentials)
-    - name: Log in to DockerHub
-      run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
-
-    # Build the Docker image
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-site-image:$(date +%s)
-
-    # Push the Docker image to DockerHub (replace USERNAME with your DockerHub username)
-    - name: Push the Docker image
-      run: docker push my-site-image:$(date +%s)
-
-    # Optionally, you can add a step to deploy the Docker image to your server
-    # Example (replace with your deployment logic):
-    # - name: Deploy to server
-    #   run: |
-    #     ssh user@server "docker pull my-site-image:$(date +%s) && docker run -d -p 80:80 my-site-image:$(date +%s)"
+      - name: Check out the repo
+        uses: actions/checkout@v3
+      
+      - name: Log in to Docker Hub
+        uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME  }}
+          password: ${{ secrets.DOCKERHUB_TOKEN  }}
+      
+      - name: Extract metadata (tags, labels) for Docker
+        id: meta
+        uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
+        with:
+          images: thetips4you/testjodejsapp
+      
+      - name: Build and push Docker image
+        uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
