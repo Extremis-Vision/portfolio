@@ -17,7 +17,7 @@ COPY . .
 RUN npm run build
 
 # Exposer le port utilisé par l'application (par défaut 3000 pour Vite faire le déploiment sur le port)
-EXPOSE 3000
+EXPOSE 5173
 
 # Commande pour démarrer l'application
 CMD ["npm", "run", "dev"]
