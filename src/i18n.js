@@ -58,9 +58,9 @@ const resources = {
             "projet_des_1": "Projet",
             "projet_des_2":"Projet",
             "projet_des_3":"Projet",
-            "projet_des_4":"Projet",
+            "projet_des_4":"projet",
             "projet_des_5":"Projet",
-            "projet_des_6": "test"
+            "projet_des_6": "projet"
         }
     },
     de: {
