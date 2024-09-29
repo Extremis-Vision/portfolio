@@ -16,7 +16,7 @@ COPY . .
 # Compiler l'application si nécessaire (par exemple, avec Vite)
 RUN npm run build
 
-# Exposer le port utilisé par l'application (par défaut 3000 pour Vite)
+# Exposer le port utilisé par l'application (par défaut 3000 pour Vite faire le déploiment sur le port)
 EXPOSE 3000
 
 # Commande pour démarrer l'application
