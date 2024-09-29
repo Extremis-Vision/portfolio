@@ -1,0 +1,34 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    # Check out the repository
+    - uses: actions/checkout@v4
+
+    # Log in to DockerHub (replace USERNAME and PASSWORD with your DockerHub credentials)
+    - name: Log in to DockerHub
+      run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+
+    # Build the Docker image
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag my-site-image:$(date +%s)
+
+    # Push the Docker image to DockerHub (replace USERNAME with your DockerHub username)
+    - name: Push the Docker image
+      run: docker push my-site-image:$(date +%s)
+
+    # Optionally, you can add a step to deploy the Docker image to your server
+    # Example (replace with your deployment logic):
+    # - name: Deploy to server
+    #   run: |
+    #     ssh user@server "docker pull my-site-image:$(date +%s) && docker run -d -p 80:80 my-site-image:$(date +%s)"
