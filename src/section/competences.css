@@ -1,0 +1,178 @@
+#skills {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+#skills h1 {
+  font-size: 3rem;
+  text-size-adjust: 10%;
+  text-align: center;
+  margin-top: 300px;
+  margin-bottom: 70px;
+}
+
+.container1 {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 0 auto;
+  max-width: 800px;
+  max-height: 420px;
+}
+
+.box {
+  position: relative;
+  background-color: #f4f4f4;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  margin-bottom: 25px;
+  padding: 8px;
+  text-align: center;
+  box-sizing: border-box;
+  flex-basis: calc(25% - 20px); /* Ajusté pour quatre éléments par ligne */
+  aspect-ratio: 1;
+  max-width: 100px;
+  max-height: 100px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.box:hover {
+  transform: scale(0.8);
+}
+
+.box .icon-name {
+  display: none;
+  position: absolute;
+  bottom: -40px; /* Ajustez cette valeur en fonction de la distance souhaitée */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 25px;
+  color: #000;
+}
+
+.box .icon-names {
+  display: none;
+  position: absolute;
+  bottom: -63px; /* Ajustez cette valeur en fonction de la distance souhaitée */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 25px;
+  color: #000;
+}
+
+.box:hover .icon-name {
+  display: block;
+  
+}
+
+.box:hover .icon-names {
+  display: block;
+  
+}
+
+#python {
+  background-image: url('../src/assets/icons8-python.svg');
+  background-size: cover;
+  background-position: center;
+}
+
+#C {
+  background-image: url('../src/assets/icons8-c.svg');
+  background-size: cover;
+  background-position: center;
+}
+
+#html {
+  background-image: url('../src/assets/icons8-html.svg');
+  background-size: cover;
+  background-position: center;
+}
+
+#css {
+  background-image: url('../src/assets/icons8-css.svg');
+  background-size: 90%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#react {
+  background-image: url('../src/assets/react.svg');
+  background-size: 90%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#php {
+  background-image: url('../src/assets/php-plain.svg');
+  background-size: 95%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#fusion {
+  background-image: url('../src/assets/3dmodel.svg');
+  background-size: cover;
+  background-position: center;
+}
+
+#troi {
+  background-image: url('../src/assets/print.svg');
+  background-position: center;
+  background-size: 90%;
+  background-repeat: no-repeat;
+}
+
+.buttonskill {
+  padding: 15px 40px;
+  font-size: 1.2rem;
+  color: #333333;
+  background-color: transparent;
+  border: 2px solid #333333;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  margin-top: 40px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  animation: fadeInUp 1s ease-out;
+}
+
+.buttonskill::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: rgba(51, 51, 51, 0.1);
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  z-index: -1;
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.buttonskill:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.buttonskill:hover {
+  color: #ffffff;
+  background-color: #000000;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+@keyframes fadeInUp {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}

@@ -1,0 +1,168 @@
+/* Style global pour les sections */
+section {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Style pour le titre de la section projets */
+#projects h1 {
+  font-size: 3rem;
+  margin-top: 200px; /* Espacement supérieur pour un meilleur décalage */
+  margin-bottom: 50px; /* Espacement inférieur pour une meilleure séparation */
+  animation: fadeInDown 1s ease-out;
+}
+
+@keyframes fadeInDown {
+  0% {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Conteneur pour les boîtes de projet */
+.container2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px; /* Espace entre les lignes de boîtes */
+}
+
+/* Ligne contenant les boîtes de projet */
+.row {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 25px; /* Espace entre les boîtes dans une ligne */
+}
+
+/* Style de base pour les boîtes de projet */
+.boxa {
+  background-color: #f4f4f4;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  box-sizing: border-box;
+  border-radius: 15px;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Dimensions spécifiques pour les boîtes de projet */
+.boxa1 {
+  width: 220px;
+  height: 250px;
+}
+
+.boxa2 {
+  width: 350px;
+  height: 250px;
+}
+
+/* Effet au survol des boîtes de projet */
+.boxa:hover {
+  color: #ffffff;
+  background-color: #000000;
+  transform: scale(1.05); /* Agrandir légèrement au survol */
+}
+
+/* Style pour le bouton de compétences */
+.buttonskills {
+  padding: 15px 40px;
+  font-size: 1.2rem;
+  color: #333333;
+  background-color: transparent;
+  border: 2px solid #333333;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  animation: fadeInUp 1s ease-out;
+}
+
+.buttonskills::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: rgba(51, 51, 51, 0.1);
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  z-index: -1;
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.buttonskills:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.buttonskills:hover {
+  color: #ffffff;
+  background-color: #000000;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+@keyframes fadeInUp {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.projet1{
+  background-image: url('../src/assets/ai.svg');
+  background-position: center;
+  background-size: 90%;
+  background-repeat: no-repeat;
+}
+
+.projet2{
+  background-image: url('../src/assets/server.gif');
+  background-position: center;
+  background-size: 65%;
+  background-repeat: no-repeat;
+}
+
+.projet3{
+  background-image: url('../src/assets/untitled.png');
+  background-position: center;
+  background-size: 90%;
+  background-repeat: no-repeat;
+}
+
+.projet4{
+  background-image: url('../src/assets/php-plain.svg');
+  background-position: center;
+  background-size: 90%;
+  background-repeat: no-repeat;
+}
+
+.projet5{
+  background-image: url('../src/assets/php-plain.svg');
+  background-position: center;
+  background-size: 90%;
+  background-repeat: no-repeat;
+}
+
+.projet6{
+  background-image: url('../src/assets/php-plain.svg');
+  background-position: center;
+  background-size: 90%;
+  background-repeat: no-repeat;
+}

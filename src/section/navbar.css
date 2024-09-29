@@ -1,0 +1,205 @@
+/* src/App.css */
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: "Google Sans Regular";
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #fefefe;
+  }
+  
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  #navbar {
+    width: 95%;
+    height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .hamburger {
+    display: none;
+  }
+  
+  .nav-bar-back {
+    padding: 6px;
+    border-radius: 30px;
+    background-color: #757575;
+    border: 1px solid #000;
+  }
+  
+  .link-back {
+    background-color: #fefefe;
+  }
+  
+  .nav-bar ul {
+    display: flex;
+  }
+  
+  .nav-bar ul li a {
+    display: block;
+    color: #11101b;
+    font-size: 20px;
+    padding: 10px 25px;
+    border-radius: 50px;
+    transition: 0.2s;
+    margin: 0 5px;
+    border: 1px solid #000;
+  }
+  
+  .nav-bar ul li a:hover {
+    color: #fefefe;
+    background-color: #11101b;
+  }
+  
+  .backlanguage {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 2.5vw;
+    position: relative;
+  }
+  
+  .language {
+    padding: 16px;
+    border-radius: 99999px;
+    background-color: #fefefe;
+    box-sizing: border-box;
+    border: 3px solid #757575;
+    font-size: 15px;
+    aspect-ratio: 1;
+    max-width: 56.5px;
+    max-height: 56.5px;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .language_button  {
+    all: unset; /* Réinitialiser toutes les propriétés héritables et non héritables */
+    font-family: inherit; /* Hériter de la famille de polices du parent */
+    font-size: inherit; /* Hériter de la taille de police du parent */
+    color: inherit; /* Hériter de la couleur de texte du parent */
+    cursor: pointer; /* Changer le curseur en pointeur pour les boutons */
+    display: inline-block; /* Assurer que les boutons restent inline-block */
+    border: none; /* Enlever les bordures */
+    background: none; /* Enlever l'arrière-plan */
+    aspect-ratio: 1;
+    border: 3px solid #757575;
+  }
+  
+  button:hover {
+    color: #fefefe;
+    background-color: #757575;
+  }
+  
+  .language-show {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    background-color: #757575;
+    border: 1px solid #757575;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+  }
+  
+  .language-show ul {
+    padding: 10px;
+  }
+  
+  .language-show ul li {
+    margin: 5px 0;
+  }
+  
+
+  
+@media only screen and (max-width: 1320px) {
+  header{
+      padding: 0 50px;
+  }
+}
+
+@media only screen and (max-width: 1110px) {
+  header{
+      padding: 0 30px;
+  }
+}
+
+@media only screen and (max-width: 879px) {
+  header {
+      width: 100%;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: right;
+  }
+
+  .nav-bar-back{
+      padding: 8px;
+      border-radius: 30px;
+      background-color: #fefefe;
+      border: 1px solid #000;
+  }
+
+  .hamburger {
+      display: block;
+      cursor: pointer;
+  }
+
+  .hamburger .line {
+      width: 30px;
+      height: 3px;
+      background-color: #11101b;
+      margin: 6px 0;
+  }
+
+  .nav-bar {
+      height: 0px;
+      position: absolute;
+      top: 80px;
+      left: 0;
+      right: 0;
+      width: 100vw;
+      background-color: #fefefe;
+      transition: 0.2s;
+      overflow: hidden;
+
+  }
+
+  .nav-bar.active {
+      height: 450px;
+  }
+
+  .nav-bar ul {
+      display: block;
+      width: fit-content;
+      margin: 80px auto;
+      text-align: center;
+      transition: 0.5s;
+      opacity: 0;    
+  }
+
+  .nav-bar.active ul {
+      opacity: 1;
+  }
+
+
+  .nav-bar ul li a {
+      margin-bottom: 12px;
+      border: 1px solid #000;
+  }
+
+
+}

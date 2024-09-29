@@ -1,0 +1,27 @@
+canvas {
+    pointer-events: auto; /* Assurez-vous que le canevas peut recevoir les événements de souris */
+  }
+  
+  /* Vous pouvez également essayer d'ajouter ces styles pour la div contenant le canevas */
+  .canvas-container {
+    pointer-events: none; /* Assurez-vous que la div n'interfère pas avec les événements de souris */
+  }
+  
+  /* canvas.css */
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  height: 85vh; /* Utiliser la hauteur complète de la fenêtre */
+}
+
+.canvas-wrapper {
+  width: 80%;
+  height: 85vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

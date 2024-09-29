@@ -1,0 +1,81 @@
+/* modal.css */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Assurez-vous que le modal est au-dessus du contenu */
+  backdrop-filter: blur(10px); /* Effet de flou sur l'arrière-plan */
+}
+
+.modal-inner-content {
+  padding: 30px; /* Espacement interne */
+  max-width: 80%; /* Limiter la largeur du contenu */
+  max-height: 70%; /* Limiter la hauteur du contenu */
+  overflow-y: auto; /* Permet le défilement si le contenu dépasse */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Ombre pour le contenu */
+  border-radius: 12px; /* Coins arrondis pour le contenu */
+  background: #fff;
+  border-radius: 12px; /* Bord arrondi pour le modal */
+  padding: 60px; /* Plus d'espacement interne pour agrandir la fenêtre */
+  max-width: 80vw; /* Limiter la largeur à 80% de la fenêtre */
+  max-height: 80vh; /* Limiter la hauteur à 80% de la fenêtre */
+  overflow-y: auto; /* Permet le défilement à l'intérieur du modal */
+  position: relative;
+  box-shadow: none; /* Supprimer l'ombre portée pour éviter l'effet de profondeur */
+  border: 1px solid #ccc; 
+}
+
+
+.modal-content {
+
+  border-radius: 12px; /* Bord arrondi pour le modal */
+  padding: 60px; /* Plus d'espacement interne pour agrandir la fenêtre */
+  max-width: 80vw; /* Limiter la largeur à 80% de la fenêtre */
+  max-height: 80vh; /* Limiter la hauteur à 80% de la fenêtre */
+  overflow-y: auto; /* Permet le défilement à l'intérieur du modal */
+  position: relative;
+  box-shadow: none; /* Supprimer l'ombre portée pour éviter l'effet de profondeur */
+}
+
+/* Style de la croix de fermeture */
+.close {
+  position: absolute;
+  top: 20px; /* Positionnement à 20px du haut */
+  right: 20px; /* Positionnement à 20px de la droite */
+  cursor: pointer;
+  font-size: 40px; /* Taille agrandie pour la croix de fermeture */
+  font-weight: bold;
+  color: red; /* Couleur rouge pour la croix */
+  background: none; /* Pas de fond pour un look épuré */
+  border: none; /* Pas de bordure */
+  transition: color 0.3s ease; /* Transition pour le changement de couleur */
+}
+
+/* Pseudo-élément pour le cercle autour de la croix */
+.close::after {
+  content: '';
+  position: absolute;
+  top: 50%; /* Centrer verticalement */
+  right: 50%; /* Centrer horizontalement */
+  width: 60px; /* Diamètre du cercle */
+  height: 60px; /* Diamètre du cercle */
+  border-radius: 50%; /* Rendre le fond circulaire */
+  background: transparent; /* Fond transparent par défaut */
+  transition: background 0.3s ease; /* Transition pour le changement de fond */
+  transform: translate(50%, -50%); /* Ajuster pour centrer correctement */
+}
+
+/* Effet au survol de la croix et du cercle */
+.close:hover {
+  color: darkred; /* Couleur au survol */
+}
+
+.close:hover::after {
+  background: rgba(255, 0, 0, 0.3); /* Halo rouge autour de la croix au survol */
+}

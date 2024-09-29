@@ -1,0 +1,105 @@
+#contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  background-color: #ffffff;
+  color: #333333;
+  padding: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+#contact h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  animation: fadeInDown 1s ease-out;
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+button.contact {
+  color: #333333;
+  background-color: transparent;
+  padding: 15px 40px;
+  border: 2px solid #333333;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  margin-top: 20px;
+  animation: fadeInUp 1s ease-out;
+}
+
+button.contact::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: rgba(51, 51, 51, 0.1);
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  z-index: -1;
+  transform: translate(-50%, -50%) scale(0);
+}
+
+button.contact:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+button.contact:hover {
+  color: #ffffff;
+  background-color: #333333;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Adding some decorative elements to make the section more stylish */
+#contact::before,
+#contact::after {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: rgba(51, 51, 51, 0.05);
+  z-index: -1;
+}
+
+#contact::before {
+  top: -150px;
+  left: -150px;
+}
+
+#contact::after {
+  bottom: -150px;
+  right: -150px;
+}
