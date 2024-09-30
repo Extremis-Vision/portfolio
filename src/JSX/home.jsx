@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useSpring, animated } from '@react-spring/web'; // Importez les fonctions nécessaires pour l'animation
-import '../i18n'; // Assurez-vous que ce fichier est configuré comme indiqué dans les étapes précédentes
+import { useSpring, animated } from '@react-spring/web';
+import '../i18n';
 import '../section/navbar.css';
 
 function App() {
@@ -10,6 +10,7 @@ function App() {
   const [isLanguageMenuVisible, setIsLanguageMenuVisible] = useState(false);
   const [currentLanguage, setCurrentLanguage] = useState(i18n.language);
   const [scrollY, setScrollY] = useState(0);
+  const languageMenuRef = useRef(null); // Create a ref for the language menu
 
   const toggleMenu = () => {
     setIsActive(!isActive);
@@ -17,7 +18,7 @@ function App() {
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
-    localStorage.setItem('language', lng); // Sauvegarder la langue sélectionnée dans le local storage
+    localStorage.setItem('language', lng);
     setIsLanguageMenuVisible(false);
   };
 
@@ -26,6 +27,14 @@ function App() {
   };
 
   const handleLanguageMouseLeave = () => {
+    setIsLanguageMenuVisible(false);
+  };
+
+  const handleLanguageMenuMouseEnter = () => {
+    setIsLanguageMenuVisible(true);
+  };
+
+  const handleLanguageMenuMouseLeave = () => {
     setIsLanguageMenuVisible(false);
   };
 
@@ -41,26 +50,21 @@ function App() {
     };
   }, [i18n]);
 
-  // Fonction pour gérer le défilement de la page
   const handleScroll = () => {
     setScrollY(window.scrollY);
   };
 
   useEffect(() => {
-    // Ajouter l'écouteur d'événements pour le défilement
     window.addEventListener('scroll', handleScroll);
-
     return () => {
-      // Nettoyer l'écouteur d'événements lors du démontage du composant
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
-  // Définir les propriétés d'animation
   const animationProps = useSpring({
-    opacity: scrollY < 100 ? 1 : 0, // Fait disparaître le texte lorsque scrollY est supérieur à 100px
-    transform: `translateY(${scrollY > 100 ? -scrollY / 2 : 0}px)`, // Déplace le texte vers le haut en fonction du défilement
-    config: { tension: 200, friction: 30 }
+    opacity: scrollY < 100 ? 1 : 0,
+    transform: `translateY(${scrollY > 100 ? -scrollY / 2 : 0}px)`,
+    config: { tension: 200, friction: 30 },
   });
 
   return (
@@ -71,49 +75,64 @@ function App() {
           <div className="line"></div>
           <div className="line"></div>
         </div>
-        <nav id='navbar' className={`nav-bar ${isActive ? 'active' : ''}`}>
-          <ul className='nav-bar-back'>
+        <nav id="navbar" className={`nav-bar ${isActive ? 'active' : ''}`}>
+          <ul className="nav-bar-back">
             <li>
-              <a 
-                href="" 
-                className='link-back'
-                onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+              <a
+                href=""
+                className="link-back"
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
               >
                 {t('accueil')}
               </a>
             </li>
             <li>
-              <a 
-                href="" 
-                className='link-back'
-                onClick={(e) => { e.preventDefault(); document.getElementById('skills').scrollIntoView({ behavior: 'smooth' }); }}
+              <a
+                href=""
+                className="link-back"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('skills').scrollIntoView({ behavior: 'smooth' });
+                }}
               >
                 {t('competences')}
               </a>
             </li>
             <li>
-              <a 
-                href="" 
-                className='link-back' 
-                onClick={(e) => { e.preventDefault(); document.getElementById('projects').scrollIntoView({ behavior: 'smooth' }); }}
+              <a
+                href=""
+                className="link-back"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
+                }}
               >
                 {t('projets')}
               </a>
             </li>
             <li>
-              <a 
-                href="" 
-                className='link-back' 
-                onClick={(e) => { e.preventDefault(); document.getElementById('education').scrollIntoView({ behavior: 'smooth' }); }}
+              <a
+                href=""
+                className="link-back"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('education').scrollIntoView({ behavior: 'smooth' });
+                }}
               >
                 {t('experience')}
               </a>
             </li>
             <li>
-              <a 
-                href="" 
-                className='link-back' 
-                onClick={(e) => { e.preventDefault(); document.getElementById('contact').scrollIntoView({ behavior: 'smooth' }); }}
+              <a
+                href=""
+                className="link-back"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+                }}
               >
                 {t('contact')}
               </a>
@@ -122,17 +141,34 @@ function App() {
         </nav>
 
         <div
-          className='backlanguage'
+          className="backlanguage"
           onMouseEnter={handleLanguageMouseEnter}
           onMouseLeave={handleLanguageMouseLeave}
         >
-          <button className='language'>{currentLanguage.toUpperCase()}</button>
+          <button className="language">{currentLanguage.toUpperCase()}</button>
           {isLanguageMenuVisible && (
-            <div className="language-show">
+            <div
+              className="language-show"
+              ref={languageMenuRef}
+              onMouseEnter={handleLanguageMenuMouseEnter}
+              onMouseLeave={handleLanguageMenuMouseLeave}
+            >
               <ul>
-                <li><button className='language_button' onClick={() => changeLanguage('en')}>EN</button></li>
-                <li><button className='language_button' onClick={() => changeLanguage('fr')}>FR</button></li>
-                <li><button className='language_button' onClick={() => changeLanguage('de')}>DE</button></li>
+                <li>
+                  <button className="language_button" onClick={() => changeLanguage('en')}>
+                    EN
+                  </button>
+                </li>
+                <li>
+                  <button className="language_button" onClick={() => changeLanguage('fr')}>
+                    FR
+                  </button>
+                </li>
+                <li>
+                  <button className="language_button" onClick={() => changeLanguage('de')}>
+                    DE
+                  </button>
+                </li>
               </ul>
             </div>
           )}
