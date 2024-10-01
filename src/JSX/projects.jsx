@@ -7,7 +7,8 @@ import '../section/modal.css';
 
 function App() {
   const { t } = useTranslation();
-  const [showModal, setShowModal] = useState({}); // Store the modal visibility state for each project
+  const [showModal, setShowModal] = useState({});
+  const [selectedSlide, setSelectedSlide] = useState('c1'); // State to manage the selected slide
 
   const handleOpenModal = (project) => {
     setShowModal({ ...showModal, [project]: true });
@@ -21,106 +22,72 @@ function App() {
     <>
       <section id="projects">
         <h1>{t('projets')}</h1>
-        <div className="container2">
-          <div className="row">
-            <button
-              className="boxa boxa1 projet1"
-              onClick={() => handleOpenModal('projet1')}
-            ></button>
-            <button
-              className="boxa boxa2 projet2"
-              onClick={() => handleOpenModal('projet2')}
-            ></button>
-            <button
-              className="boxa boxa1 projet3"
-              onClick={() => handleOpenModal('projet3')}
-            ></button>
-          </div>
-          <div className="row">
-            <button
-              className="boxa boxa2 projet4"
-              onClick={() => handleOpenModal('projet4')}
-            ></button>
-            <button
-              className="boxa boxa1 projet5"
-              onClick={() => handleOpenModal('projet5')}
-            ></button>
-            <button
-              className="boxa boxa1 projet6"
-              onClick={() => handleOpenModal('projet6')}
-            ></button>
+        
+        <div className="wrapper_projet_label">
+          <div className="container_projet_label">
+            <input type="radio" name="slide" id="c1" checked={selectedSlide === 'c1'} onChange={() => setSelectedSlide('c1')} />
+            <label htmlFor="c1" className="card">
+              <div className="row">
+                <div className="icon">1</div>
+                <div className="description">
+                  <h4>{t('projet_1')}</h4>
+                  <div class="button-container">
+                    <button className="text-button" onClick={() => handleOpenModal('4')}>{t('projet_des_plus')}</button>
+                  </div>                </div>
+              </div>
+            </label>
+
+            <input type="radio" name="slide" id="c2" checked={selectedSlide === 'c2'} onChange={() => setSelectedSlide('c2')} />
+            <label htmlFor="c2" className="card">
+              <div className="row">
+                <div className="icon">2</div>
+                <div className="description">
+                  <h4>{t('projet_2')}</h4>
+                  <div class="button-container">
+                    <button className="text-button" onClick={() => handleOpenModal('4')}>{t('projet_des_plus')}</button>
+                  </div>                </div>
+              </div>
+            </label>
+
+            <input type="radio" name="slide" id="c3" checked={selectedSlide === 'c3'} onChange={() => setSelectedSlide('c3')} />
+            <label htmlFor="c3" className="card">
+              <div className="row">
+                <div className="icon">3</div>
+                <div className="description">
+                  <h4>{t('projet_3')}</h4>
+                  <div class="button-container">
+                    <button className="text-button" onClick={() => handleOpenModal('4')}>{t('projet_des_plus')}</button>
+                  </div>                </div>
+              </div>
+            </label>
+
+            <input type="radio" name="slide" id="c4" checked={selectedSlide === 'c4'} onChange={() => setSelectedSlide('c4')} />
+            <label htmlFor="c4" className="card">
+              <div className="row">
+                <div className="icon">4</div>
+                <div className="description">
+                  <h4>{t('projet_4')}</h4>
+                  <div class="button-container">
+                    <button className="text-button" onClick={() => handleOpenModal('4')}>{t('projet_des_plus')}</button>
+                  </div>
+                </div>
+              </div>
+            </label>
           </div>
         </div>
         <button className="buttonskills">{t('skills_button')}</button>
       </section>
 
-      {/* Modal for Projet 1 */}
-      {showModal.projet1 && (
-        <Modal show={showModal.projet1} handleClose={() => handleCloseModal('projet1')}>
-          <div className="modal-inner-content">
-            <h2 className="modal-title">{t('projet_1')}</h2>
-            <p className="modal-description">{t('projet_des_1')}</p>
-          </div>
-        </Modal>
-      )}
-
-      {/* Modal for Projet 2 */}
-      {showModal.projet2 && (
-        <Modal show={showModal.projet2} handleClose={() => handleCloseModal('projet2')}>
-          <div className="modal-inner-content">
-            <h2 className="modal-title">{t('projet_2')}</h2>
-            <p className="modal-description">{t('projet_des_2')}</p>
-            {/* Add any other specific content for Projet 2 */}
-          </div>
-        </Modal>
-      )}
-
-      {/* Modal for Projet 3 */}
-      {showModal.projet3 && (
-        <Modal show={showModal.projet3} handleClose={() => handleCloseModal('projet3')}>
-          <div className="modal-inner-content">
-            <h2 className="modal-title">{t('projet_3')}</h2>
-            <p className="modal-description">{t('projet_des_3')}</p>
-            {/* Add any other specific content for Projet 3 */}
-          </div>
-        </Modal>
-      )}
-
-      {/* Add more modals for other projects as needed */}
-      {/* Example for Projet 4 */}
-      {showModal.projet4 && (
-        <Modal show={showModal.projet4} handleClose={() => handleCloseModal('projet4')}>
-          <div className="modal-inner-content">
-            <h2 className="modal-title">{t('projet_4')}</h2>
-            <p className="modal-description">{t('projet_des_4')}</p>
-            {/* Add any other specific content for Projet 4 */}
-          </div>
-        </Modal>
-      )}
-
-      {showModal.projet5 && (
-        <Modal show={showModal.projet5} handleClose={() => handleCloseModal('projet5')}>
-          <div className="modal-inner-content">
-            <h2 className="modal-title">{t('projet_5')}</h2>
-            <p className="modal-description">{t('projet_des_5')}</p>
-            {/* Add any other specific content for Projet 3 */}
-          </div>
-        </Modal>
-      )}
-
-      {/* Add more modals for other projects as needed */}
-      {/* Example for Projet 4 */}
-      {showModal.projet6 && (
-        <Modal show={showModal.projet6} handleClose={() => handleCloseModal('projet6')}>
-          <div className="modal-inner-content">
-            <h2 className="modal-title">{t('projet_6')}</h2>
-            <p className="modal-description">{t('projet_des_6')}</p>
-            {/* Add any other specific content for Projet 4 */}
-          </div>
-        </Modal>
-      )}
-
-      {/* Repeat the above structure for Projet 5 and Projet 6 */}
+      {Object.keys(showModal).map((projectKey) => (
+        showModal[projectKey] && (
+          <Modal key={projectKey} show={showModal[projectKey]} handleClose={() => handleCloseModal(projectKey)}>
+            <div className="modal-inner-content">
+              <h2 className="modal-title">{t(`projet_${projectKey}`)}</h2>
+              <p className="modal-description">{t(`projet_des_${projectKey}`)}</p>
+            </div>
+          </Modal>
+        )
+      ))}
     </>
   );
 }

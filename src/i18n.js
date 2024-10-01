@@ -18,9 +18,9 @@ const resources = {
             "contact_titre": "Thanks for your time",
             "contact_button": "To contact",
             "projet_1": "Jarvis",
-            "projet_2": "Projet",
-            "projet_3": "Projet",
-            "projet_4": "Projet",
+            "projet_2": "Server",
+            "projet_3": "3d printing",
+            "projet_4": "Recycling",
             "projet_5": "Projet",
             "projet_6": "Projet",
             "projet_des_1": "Projet",
@@ -28,7 +28,8 @@ const resources = {
             "projet_des_3":"Projet",
             "projet_des_4":"Projet",
             "projet_des_5":"Projet",
-            "projet_des_6": "Projet"
+            "projet_des_6": "Projet",
+            "projet_des_plus":"More to see"
         }
     },
     fr: {
@@ -50,9 +51,9 @@ const resources = {
             "contact_titre": "Merci pour votre temps",
             "contact_button": "Contacter",
             "projet_1": "Jarvis",
-            "projet_2": "Projet",
-            "projet_3": "Projet",
-            "projet_4": "Projet",
+            "projet_2": "Serveur",
+            "projet_3": "Impression 3d",
+            "projet_4": "Recyclage",
             "projet_5": "Projet",
             "projet_6": "Projet",
             "projet_des_1": "Projet",
@@ -60,7 +61,8 @@ const resources = {
             "projet_des_3":"Projet",
             "projet_des_4":"projet",
             "projet_des_5":"Projet",
-            "projet_des_6": "projet"
+            "projet_des_6": "projet",
+            "projet_des_plus":"Voir plus"
         }
     },
     de: {
@@ -88,7 +90,8 @@ const resources = {
             "projet_des_3":"Projet",
             "projet_des_4":"Projet",
             "projet_des_5":"Projet",
-            "projet_des_6": "Projet"
+            "projet_des_6": "Projet",
+            "projet_des_plus":""
         }
     }
 };

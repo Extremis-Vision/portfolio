@@ -10,65 +10,18 @@ section {
 #projects h1 {
   font-size: 3rem;
   margin-top: 200px; /* Espacement supérieur pour un meilleur décalage */
-  margin-bottom: 50px; /* Espacement inférieur pour une meilleure séparation */
   animation: fadeInDown 1s ease-out;
 }
 
 @keyframes fadeInDown {
   0% {
-      opacity: 0;
-      transform: translateY(-20px);
+    opacity: 0;
+    transform: translateY(-20px);
   }
   100% {
-      opacity: 1;
-      transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
   }
-}
-
-/* Conteneur pour les boîtes de projet */
-.container2 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 40px; /* Espace entre les lignes de boîtes */
-}
-
-/* Ligne contenant les boîtes de projet */
-.row {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  gap: 25px; /* Espace entre les boîtes dans une ligne */
-}
-
-/* Style de base pour les boîtes de projet */
-.boxa {
-  background-color: #f4f4f4;
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  text-align: center;
-  box-sizing: border-box;
-  border-radius: 15px;
-  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
-}
-
-/* Dimensions spécifiques pour les boîtes de projet */
-.boxa1 {
-  width: 220px;
-  height: 250px;
-}
-
-.boxa2 {
-  width: 350px;
-  height: 250px;
-}
-
-/* Effet au survol des boîtes de projet */
-.boxa:hover {
-  color: #ffffff;
-  background-color: #000000;
-  transform: scale(1.05); /* Agrandir légèrement au survol */
 }
 
 /* Style pour le bouton de compétences */
@@ -82,7 +35,7 @@ section {
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-  margin-top: 20px;
+  margin-top: 10px;
   position: relative;
   overflow: hidden;
   z-index: 1;
@@ -116,53 +69,142 @@ section {
 
 @keyframes fadeInUp {
   0% {
-      opacity: 0;
-      transform: translateY(20px);
+    opacity: 0;
+    transform: translateY(20px);
   }
   100% {
-      opacity: 1;
-      transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-.projet1{
-  background-image: url('../src/assets/profile.jpg');
-  background-position: center;
-  background-size: 90%;
-  background-repeat: no-repeat;
+.wrapper_projet_label {
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.projet2{
-  background-image: url('../src/assets/server.gif');
-  background-position: center;
-  background-size: 65%;
-  background-repeat: no-repeat;
+.container_projet_label {
+  height: 400px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: start;
 }
 
-.projet3{
-  background-image: url('../src/assets/profile.jpg');
-  background-position: center;
-  background-size: 90%;
-  background-repeat: no-repeat;
+.card {
+  width: 80px;
+  border-radius: 2rem;
+  cursor: pointer;
+  overflow: hidden;
+  margin: 0 10px;
+  display: flex;
+  align-items: flex-end;
+  transition: 0.6s cubic-bezier(0.28, -0.03, 0, 0.99);
+  box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.8);
+  background-size: cover; /* Adjust this to 'contain' if needed */
+  background-position: center; /* Center the background image */
 }
 
-.projet4{
-  background-image: url('../src/assets/profile.jpg');
-  background-position: center;
-  background-size: 90%;
-  background-repeat: no-repeat;
+.card > .row {
+  color: white;
+  display: flex;
+  flex-wrap: nowrap;
 }
 
-.projet5{
-  background-image: url('../src/assets/profile.jpg');
-  background-position: center;
-  background-size: 90%;
-  background-repeat: no-repeat;
+.card > .row > .icon {
+  background: #223;
+  color: white;
+  border-radius: 50%;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px;
 }
 
-.projet6{
-  background-image: url('../src/assets/profile.jpg');
-  background-position: center;
-  background-size: 90%;
-  background-repeat: no-repeat;
+.card > .row > .description {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 80px;
+  width: 520px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition-delay: 0.3s;
+  transition: all 0.3s ease;
+}
+
+.description h4 {
+  color: white;
+  font-size: 1.2rem;
+  padding-bottom: 10px;
+}
+
+input {
+  display: none;
+}
+
+input:checked + label {
+  width: 600px;
+}
+
+input:checked + label .description {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.card[for="c1"] {
+  background-image: url('../assets/forge.jpg');
+}
+.card[for="c2"] {
+  background-image: url('../assets/image.jpg');
+}
+.card[for="c3"] {
+  background-image: url('../assets/programme.jpg');
+}
+.card[for="c4"] {
+  background-image: url('./img4.jpeg');
+}
+
+/* Updated text-button styles */
+.button-container {
+  display: flex; /* Enable flexbox */
+  justify-content: center; /* Center the button horizontally */
+  align-items: center; /* Center the button vertically if necessary */
+}
+
+.text-button {
+  width: 100px; /* Set button width to 100 pixels */
+  font-size: 0.9rem; /* Make the button smaller */
+  color: #333;
+  text-decoration: none; /* Remove default underline */
+  position: relative; /* Maintain relative positioning for underline */
+  cursor: pointer; /* Change cursor to pointer */
+  padding: 5px 0; /* Adjust padding for a smaller button */
+  background-color: #ffffff; /* Set background color */
+  border-radius: 10px; /* Rounded corners */
+  border: 2px solid #fffafa; /* Border to match text color */
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.text-button:hover {
+  color: #ffffff; /* Change text color on hover */
+}
+
+.text-button::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px; /* Thickness of the underline */
+  background: #333333; /* Color of the underline */
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.text-button:hover::after {
+  transform: scaleX(1); /* Expand underline on hover */
 }
