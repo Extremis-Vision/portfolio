@@ -9,7 +9,7 @@ function App() {
     return (
         <section id="contact">
             <h1>{t('contact_titre')}</h1>
-            <button className="contact">{t('contact_button')}</button>
+            <button className="contact" onClick={() => window.location.href = 'mailto:leonard.goetz@utbm.fr'}>{t('contact_button')}</button>
             <div className="social-btns">
                     <a href="https://www.linkedin.com/in/extremis-leonard-goetz/" target="_blank" rel="noopener noreferrer" id="linkedin" className="social-btn flex-center">
                         <svg viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"></path></svg><span>Leonard</span>

@@ -31,8 +31,8 @@ function App() {
                 <div className="icon">1</div>
                 <div className="description">
                   <h4>{t('projet_1')}</h4>
-                  <div class="button-container">
-                    <button className="text-button" onClick={() => handleOpenModal('4')}>{t('projet_des_plus')}</button>
+                  <div class="button_container_project">
+                    <button className="text_button_project" onClick={() => handleOpenModal('1')}>{t('projet_des_plus')}</button>
                   </div>                </div>
               </div>
             </label>
@@ -43,8 +43,8 @@ function App() {
                 <div className="icon">2</div>
                 <div className="description">
                   <h4>{t('projet_2')}</h4>
-                  <div class="button-container">
-                    <button className="text-button" onClick={() => handleOpenModal('4')}>{t('projet_des_plus')}</button>
+                  <div class="button_container_project">
+                    <button className="text_button_project" onClick={() => handleOpenModal('2')}>{t('projet_des_plus')}</button>
                   </div>                </div>
               </div>
             </label>
@@ -55,8 +55,8 @@ function App() {
                 <div className="icon">3</div>
                 <div className="description">
                   <h4>{t('projet_3')}</h4>
-                  <div class="button-container">
-                    <button className="text-button" onClick={() => handleOpenModal('4')}>{t('projet_des_plus')}</button>
+                  <div class="button_container_project">
+                    <button className="text_button_project" onClick={() => handleOpenModal('3')}>{t('projet_des_plus')}</button>
                   </div>                </div>
               </div>
             </label>
@@ -67,15 +67,15 @@ function App() {
                 <div className="icon">4</div>
                 <div className="description">
                   <h4>{t('projet_4')}</h4>
-                  <div class="button-container">
-                    <button className="text-button" onClick={() => handleOpenModal('4')}>{t('projet_des_plus')}</button>
+                  <div class="button_container_project">
+                    <button className="text_button_project" onClick={() => handleOpenModal('4')}>{t('projet_des_plus')}</button>
                   </div>
                 </div>
               </div>
             </label>
           </div>
         </div>
-        <button className="buttonskills">{t('skills_button')}</button>
+        {/*<button className="buttonskills">{t('skills_button')}</button>*/}
       </section>
 
       {Object.keys(showModal).map((projectKey) => (

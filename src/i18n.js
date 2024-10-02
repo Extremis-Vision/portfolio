@@ -43,7 +43,7 @@ const resources = {
             "accueil_paragraphe": "Voici la version française du site.",
             "skills_button": "Voir plus",
             "exp_stage_3": "Stage de 3ème",
-            "exp_stage_3_desc": "J'ai effectuer mon stage de 3 ème dans un garage renault." ,
+            "exp_stage_3_desc": "J'ai effectué mon stage de 3 ème dans un garage renault." ,
             "exp_stage_ing": "Stage d'ingénieur",
             "exp_stage_ing_desc": "J'ai effectué mon stage ouvrier obligatoire chez Constellium",
             "exp_ecole": "UTBM",
