@@ -103,7 +103,7 @@ export default function App() {
   const adjustCanvasSize = () => {
     const canvasWrapper = document.querySelector('.canvas-wrapper');
     if (window.innerWidth <= 768) { // For mobile devices
-      canvasWrapper.style.height = '100vh'; // Full viewport height
+      canvasWrapper.style.height = '45vh'; // Full viewport height
       canvasWrapper.style.width = '80vw'; // Full viewport width
     } else {
       canvasWrapper.style.height = '100%'; // Default height for larger screens
