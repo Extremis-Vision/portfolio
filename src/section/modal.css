@@ -79,3 +79,14 @@
 .close:hover::after {
   background: rgba(255, 0, 0, 0.3); /* Halo rouge autour de la croix au survol */
 }
+
+.modal-title {
+  margin-bottom: 10px;
+
+}
+
+.modal-description {
+  margin-bottom: 10px;
+  text-indent: 30px; /* Adjust the value for indentation */
+  margin-bottom: 1em; /* Optional: space between paragraphs */
+}
