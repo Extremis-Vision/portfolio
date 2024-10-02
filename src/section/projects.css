@@ -209,3 +209,88 @@ input:checked + label .description {
 .text_button_project:hover::after {
   transform: scaleX(1); /* Expand underline on hover */
 }
+
+
+/* Modal Styles */
+.modal-inner-content {
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: absolute; /* Changed to absolute foar positioning */
+  top: 100%; /* Positioned below the button */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000; /* Ensures it appears above other content */
+  transition: all 0.3s ease;
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+  #projects h1 {
+    font-size: 2rem; /* Smaller title on mobile */
+    margin-top: 100px; /* Adjust top margin */
+  }
+
+  .wrapper_projet_label {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  input:checked + label {
+    height: 300px;
+  }
+
+  .container_projet_label {
+    flex-direction: column; /* Ensure cards stack vertically */
+    align-items: center; /* Center cards */
+    justify-content: center; /* Center content */
+    height: 100vh;
+  }
+
+  .card > .row > .description {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 80px;
+    width: 200px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition-delay: 0.3s;
+    transition: all 0.3s ease;
+
+  }
+
+  .card {
+    width: 100%; /* Full width on mobile */
+    margin: 10px 0; /* Space between cards */
+    max-width: 300px; /* Limit width for readability */
+    height: 80px;
+  }
+
+  .text_button_project {
+    width: 100%; /* Full-width buttons on mobile */
+    z-index: -1;
+  }
+
+  input:checked + .text_button_project {
+    z-index: 10;
+  }
+
+  .description {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 20px;
+    width: 200px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition-delay: 0.3s;
+    transition: all 0.3s ease;
+  }
+}

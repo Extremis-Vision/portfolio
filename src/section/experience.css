@@ -199,7 +199,7 @@
     }
 
     .left-container_exp img, .right-container_exp img {
-        left: 10px;
+        left: 0px;
     }
 
     .left-container-arrow, .right-container-arrow {
