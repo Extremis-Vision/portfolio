@@ -212,40 +212,28 @@ input:checked + label .description {
 
 
 /* Modal Styles */
-.modal-inner-content {
-  max-width: 90%;
-  margin: 0 auto;
-  padding: 20px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  position: absolute; /* Changed to absolute foar positioning */
-  top: 100%; /* Positioned below the button */
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1000; /* Ensures it appears above other content */
-  transition: all 0.3s ease;
-}
 
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000; /* Assurez-vous que le modal est au-dessus du contenu */
-  backdrop-filter: blur(10px); /* Effet de flou sur l'arrière-plan */
-}
+
+
 
 /* Media Queries for Mobile Responsiveness */
 @media (max-width: 768px) {
   #projects h1 {
     font-size: 2rem; /* Smaller title on mobile */
     margin-top: 100px; /* Adjust top margin */
+    animation: fadeInMobile 0.5s ease-out; /* Simple fade-in animation */
+  }
+
+  /* Simple fade-in for mobile */
+  @keyframes fadeInMobile {
+    0% {
+      opacity: 0;
+      transform: translateY(20px); /* Slight upward slide for smooth entrance */
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   .wrapper_projet_label {
@@ -254,10 +242,12 @@ input:checked + label .description {
     display: flex;
     align-items: center;
     justify-content: center;
+    animation: fadeInMobile 0.6s ease-out; /* Apply fade-in for the wrapper */
   }
 
   input:checked + label {
     height: 300px;
+    animation: fadeInMobile 0.4s ease-out; /* Apply fade-in for selected label */
   }
 
   .container_projet_label {
@@ -265,19 +255,7 @@ input:checked + label .description {
     align-items: center; /* Center cards */
     justify-content: center; /* Center content */
     height: 100vh;
-  }
-
-  .card > .row > .description {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    height: 80px;
-    width: 200px;
-    opacity: 0;
-    transform: translateY(30px);
-    transition-delay: 0.3s;
-    transition: all 0.3s ease;
-
+    animation: fadeInMobile 0.6s ease-out; /* Fade in for project container */
   }
 
   .card {
@@ -285,31 +263,52 @@ input:checked + label .description {
     margin: 10px 0; /* Space between cards */
     max-width: 300px; /* Limit width for readability */
     height: 80px;
+    transition: none; /* Remove PC transition on mobile */
+    box-shadow: none; /* Remove shadow for faster rendering */
+    animation: fadeInMobile 0.5s ease-out; /* Apply smooth fade-in */
   }
 
-  .description {
-    width: 100%; /* Full-width buttons on mobile */
-    display: none;
-  }
-
-  input:checked ~ label .description {
-    display: flex; /* Show button when input is checked */
-  }
-  
-  .description {
+  /* Reduced transition for mobile */
+  .card > .row > .description {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    height: 20px;
+    height: 80px;
     width: 200px;
     opacity: 0;
-    transform: translateY(30px);
-    transition-delay: 0.3s;
-    transition: all 0.3s ease;
+    transform: translateY(10px); /* Shorter movement for faster rendering */
+    transition: all 0.2s ease; /* Simplified and faster transition */
+    transition-delay: 0.1s;
   }
 
+  /* Hide description unless input is checked */
+  .description {
+    width: 100%; /* Full-width buttons on mobile */
+    display: none;
+    z-index: -300;
+  }
 
-  .modal-inner-content {
-    padding: 20px;
+  input[type="radio"]:checked + label .description {
+    display: flex; /* Show description when the input is checked */
+    z-index: 1;
+    opacity: 1;
+    transform: translateY(0); /* Simpler translate for mobile */
+    transition: all 0.2s ease; /* Faster, lighter transition */
+  }
+
+  label .description {
+    display: none; /* Hide descriptions by default */
+  }
+
+  /* Reintroduce subtle hover effects */
+  .text_button_project {
+    transition: background-color 0.3s ease-in-out;
+    background-color: #ffffff;
+    animation: fadeInMobile 0.5s ease-out; /* Apply fade-in to buttons */
+  }
+
+  .buttonskills {
+    animation: fadeInMobile 0.6s ease-out; /* Smooth fade-in for buttons */
+    box-shadow: none; /* No shadow for better performance */
   }
 }

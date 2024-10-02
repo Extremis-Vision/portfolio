@@ -25,3 +25,28 @@ canvas {
   justify-content: center;
   align-items: center;
 }
+
+
+/* Header.module.css */
+.title {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  font-size: 4rem;
+  z-index: -1;
+  opacity: 1; /* Default opacity */
+  transition: opacity 0.3s ease; /* Add transition if needed */
+}
+
+@media (max-width: 768px) {
+  .title {
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Change opacity for mobile if needed */
+    padding: 10px;
+    z-index: 300;
+    font-size: 3rem;
+  }
+}

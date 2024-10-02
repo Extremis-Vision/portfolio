@@ -123,14 +123,11 @@ export default function App() {
   return (
     <div className="container">
       <div className="canvas-wrapper">
-        <web.h1 style={{
+        <web.h1 
+        className="title"
+        style={{
           opacity: props.open.to([0, 1], [1, 0]),
           transform: props.open.to((o) => `translate3d(-50%, ${o * 50 - 100}px, 0)`),
-          position: 'absolute',
-          top: '30%',
-          left: '50%',
-          fontSize: '4rem',
-          zIndex:-1
         }}>
           {t('accueil_titre')}
         </web.h1>
