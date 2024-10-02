@@ -33,7 +33,6 @@
 
 
 .modal-content {
-
   border-radius: 12px; /* Bord arrondi pour le modal */
   padding: 60px; /* Plus d'espacement interne pour agrandir la fenêtre */
   max-width: 80vw; /* Limiter la largeur à 80% de la fenêtre */
@@ -89,4 +88,28 @@
   margin-bottom: 10px;
   text-indent: 30px; /* Adjust the value for indentation */
   margin-bottom: 1em; /* Optional: space between paragraphs */
+}
+
+
+@media (max-width: 768px) {
+  .modal-inner-content {
+    padding: 20px;
+    
+  }
+
+
+  .modal-content {
+    padding: 30px;
+    border-radius: 12px; /* Bord arrondi pour le modal */
+    max-width: 90vw; /* Limiter la largeur à 80% de la fenêtre */
+    max-height: 90vh; /* Limiter la hauteur à 80% de la fenêtre */
+    overflow-y: auto; /* Permet le défilement à l'intérieur du modal */
+    position: relative;
+    box-shadow: none; /* Supprimer l'ombre portée pour éviter l'effet de profondeur */
+  }
+
+  .close {
+    top: 0px; /* Positionnement à 20px du haut */
+    right: 0px; /* Positionnement à 20px de la droite */
+  }
 }

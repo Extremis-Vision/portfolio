@@ -227,6 +227,20 @@ input:checked + label .description {
   transition: all 0.3s ease;
 }
 
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Assurez-vous que le modal est au-dessus du contenu */
+  backdrop-filter: blur(10px); /* Effet de flou sur l'arrière-plan */
+}
+
 /* Media Queries for Mobile Responsiveness */
 @media (max-width: 768px) {
   #projects h1 {
@@ -273,15 +287,15 @@ input:checked + label .description {
     height: 80px;
   }
 
-  .text_button_project {
+  .description {
     width: 100%; /* Full-width buttons on mobile */
-    z-index: -1;
+    display: none;
   }
 
-  input:checked + .text_button_project {
-    z-index: 10;
+  input:checked ~ label .description {
+    display: flex; /* Show button when input is checked */
   }
-
+  
   .description {
     display: flex;
     justify-content: center;
@@ -292,5 +306,10 @@ input:checked + label .description {
     transform: translateY(30px);
     transition-delay: 0.3s;
     transition: all 0.3s ease;
+  }
+
+
+  .modal-inner-content {
+    padding: 20px;
   }
 }
