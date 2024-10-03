@@ -203,7 +203,7 @@
     }
 
     .left-container-arrow, .right-container-arrow {
-        border-right: 15px solid #f9f9f9;
+        border-right: 15px solid #ededed;
         border-left: 0;
         left: -15px;
     }
