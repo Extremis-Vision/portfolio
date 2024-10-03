@@ -144,15 +144,13 @@
       height: 100px;
       display: flex;
       align-items: center;
-      justify-content: right;
   }
 
+
   #navbar {
-    width: 95%;
-    height: 360px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: 100%;
+    padding-left: 0px;
+    width: 100%;
   }
 
   .nav-bar-back{
@@ -177,7 +175,7 @@
   .nav-bar {
       height: 0px;
       position: absolute;
-      top: 80px;
+      top: 78px;
       left: 0;
       right: 0;
       width: 100vw;
@@ -189,6 +187,10 @@
 
   .nav-bar.active {
       height: 450px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 3000;
   }
 
   .nav-bar ul {
@@ -197,11 +199,14 @@
       margin: 80px auto;
       text-align: center;
       transition: 0.5s;
-      opacity: 0;    
+      opacity: 0;   
+       
   }
 
   .nav-bar.active ul {
       opacity: 1;
+      z-index: 3000;
+      align-items: end;
   }
 
 

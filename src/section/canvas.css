@@ -48,4 +48,12 @@ canvas {
     z-index: 300;
     font-size: 3rem;
   }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 85vh; /* Utiliser la hauteur complète de la fenêtre */
+  }
 }
