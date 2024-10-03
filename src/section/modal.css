@@ -101,7 +101,7 @@
   .modal-content {
     padding: 30px;
     border-radius: 12px; /* Bord arrondi pour le modal */
-    max-width: 85vw; /* Limiter la largeur à 80% de la fenêtre */
+    max-width: 50vw; /* Limiter la largeur à 80% de la fenêtre */
     max-height: 90vh; /* Limiter la hauteur à 80% de la fenêtre */
     overflow-y: auto; /* Permet le défilement à l'intérieur du modal */
     position: relative;
