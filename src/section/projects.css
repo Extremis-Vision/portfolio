@@ -156,16 +156,16 @@ input:checked + label .description {
 }
 
 .card[for="c1"] {
-  background-image: url('../assets/forge.jpg');
+  background-image: url('../assets/imprimante3d.jpg');
 }
 .card[for="c2"] {
   background-image: url('../assets/serveur_design.jpg');
 }
 .card[for="c3"] {
-  background-image: url('../assets/programme.jpg');
+  background-image: url('../assets/imprimante3d.jpg');
 }
 .card[for="c4"] {
-  background-image: url('../assets/image.jpg');
+  background-image: url('../assets/jarvis.jpg');
 }
 
 /* Updated text-button styles */
